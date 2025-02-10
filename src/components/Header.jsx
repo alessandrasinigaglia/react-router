@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 export default function Header() {
     return (
-    <header>
+    <header className="container">
         <div>
         <nav>
           <ul>
@@ -18,6 +18,11 @@ export default function Header() {
           <ul>
             <li>
             <NavLink to="/aboutus">Chi siamo</NavLink>
+            </li>
+          </ul>
+          <ul>
+            <li>
+                <button className="cnt-btn">Contact Us</button>
             </li>
           </ul>
         </nav>

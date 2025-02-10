@@ -7,7 +7,7 @@
 
 /* GENERAL */
 body {
-    font-family: "Lilita One", serif;
+    font-family: "Raleway", serif;
     min-height: 100vh;
 }
 
@@ -19,14 +19,15 @@ body {
 
 /* HEADER */
 header {
-    background-color: #F79AAC;
     max-width: 100%;
     min-height: auto;
+    
 }
 
 header nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
+    align-items: center;
     gap: 30px;
 }
 
@@ -36,4 +37,59 @@ header ul {
 
 header a {
     text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+}
+
+.cnt-btn {
+    padding: 10px 15px;
+    border: 1px solid #c1018b;
+    border-radius: 5%;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+nav ul:hover {
+    color: #c1018b;
+}
+.cnt-btn:hover {
+    transform: scale(1.1);
+}
+
+/* MAIN HOMEPAGE */
+main {
+    margin-top: 50px;
+}
+.container-main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.row {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 45px;
+    max-width: 800px;
+}
+.row p {
+    margin-top: 10px;
+}
+.plate {
+    display: flex;
+    justify-content: flex-end;
+
+}
+.plate img {
+    max-width: 800px;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
 }
