@@ -37,7 +37,7 @@ export default function HomePage() {
       <div class="post-card">
         <img src="public/img/dolce-al-cucchiaio-al-cioccolato-perugina.jpg" alt="Torta"/>
         <div class="post-content">
-          <h3>Come preparare una torta soffice e golosa</h3>
+          <h3>Come preparare un dessert super goloso e veloce</h3>
           <p>Dolce perfetto per ogni occasione.</p>
           <a href="#" class="post-link">Leggi di più →</a>
         </div>
