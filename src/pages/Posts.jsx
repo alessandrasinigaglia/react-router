@@ -24,6 +24,7 @@ export default function Posts() {
             <p>{item.ingredienti.join(", ")}</p>
           </div>
         ))}
+        
         </>
         )
 }
