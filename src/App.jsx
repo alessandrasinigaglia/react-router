@@ -8,7 +8,6 @@ import HomePage from "./pages/Homepage";
 import Posts from "./pages/Posts";
 import AboutUs from "./pages/AboutUs";
 
-
 export default function App() {
   return (
     <BrowserRouter>
@@ -21,4 +20,4 @@ export default function App() {
     </Routes>
     </BrowserRouter>
   )
-};
+}

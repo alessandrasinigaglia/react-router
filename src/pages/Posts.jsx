@@ -18,10 +18,9 @@ export default function Posts() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const newPost = {
-      author,
-      content,
+      name: author,  
+      ingredienti: content.split(","),
       image,
       category,
     };
@@ -29,7 +28,7 @@ export default function Posts() {
     axios
       .post("http://localhost:3000/posts", newPost)
       .then((response) => {
-        setShoppingList([...shoppingList, response.data]);
+        setShoppingList([...shoppingList, response.data]); 
         setAuthor("");
         setContent("");
         setImage("");
@@ -39,19 +38,22 @@ export default function Posts() {
 
   return (
     <div>
-      <h1>Lista dei Post</h1>
-
-      <div>
-        {shoppingList.map((item) => (
-          <div key={item.id}>
-            <img src={item.image} alt="Immagine" />
-            <h2>{item.author}</h2>
-            <p>{item.content}</p>
-            <span>{item.category}</span>
-          </div>
-        ))}
-      </div>
-
+      <section className="recent-posts">
+        <h1>Post Recenti</h1>
+        <div className="grid">
+          {shoppingList.map((item) => (
+            <div key={item.id} className="post-card">
+              <img src={item.image} alt={item.name} />
+              <div className="post-content">
+                <h3>{item.name}</h3>
+                <p>{item.ingredienti.join(", ")}</p>
+                <span>{item.category}</span>
+                <a href="#" className="post-link">Leggi di più →</a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
       <hr />
       <h3>Aggiungi un nuovo post</h3>
       <form onSubmit={handleSubmit}>
@@ -61,21 +63,18 @@ export default function Posts() {
           value={author}
           onChange={(e) => setAuthor(e.target.value)}
         />
-
         <label>Ingredienti</label>
         <input
           type="text"
           value={content}
           onChange={(e) => setContent(e.target.value)}
         />
-
         <label>Immagine (URL)</label>
         <input
           type="text"
           value={image}
           onChange={(e) => setImage(e.target.value)}
         />
-
         <label>Categoria</label>
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
           <option value="Antipasto">Antipasto</option>
@@ -83,7 +82,6 @@ export default function Posts() {
           <option value="Secondo piatto">Secondo piatto</option>
           <option value="Dolce">Dolce</option>
         </select>
-
         <button type="submit">Invia</button>
       </form>
     </div>
