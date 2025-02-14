@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header className="header">
             <div className="logo">
-                <img src="public/img/logo-blog.png" alt="Food Blog Logo" />
+            <img src="/img/logo-blog.png" alt="Food Blog Logo" />
             </div>
             <nav>
                 <ul>

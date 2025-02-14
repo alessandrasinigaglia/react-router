@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Posts() {
   const [shoppingList, setShoppingList] = useState([]);
@@ -9,9 +10,7 @@ export default function Posts() {
   const [category, setCategory] = useState("Antipasto");
 
   useEffect(() => {
-    axios
-      .get("http://localhost:3000/posts")
-      .then((response) => {
+    axios.get("http://localhost:3000/posts").then((response) => {
         setShoppingList(response.data);
       });
   }, []);
@@ -48,7 +47,7 @@ export default function Posts() {
                 <h3>{item.name}</h3>
                 <p>{item.ingredienti.join(", ")}</p>
                 <span>{item.category}</span>
-                <a href="#" className="post-link">Leggi di più →</a>
+                <Link to={`/post/${item.id}`} className="post-link">Leggi di più →</Link>
               </div>
             </div>
           ))}
