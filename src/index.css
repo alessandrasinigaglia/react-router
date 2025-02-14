@@ -279,3 +279,22 @@ form button:hover {
     color: white;
     transform: scale(1.1);
 }
+
+/* ABOUT US */
+.social {
+    display: flex;
+    justify-content: center;
+    color: #c1018b;
+    margin-top: 40px;
+    gap: 25px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social i:hover {
+    transform: scale(1.1);
+    color: #c570ad;
+}
+
+.social i {
+    font-size: 34px;
+}
