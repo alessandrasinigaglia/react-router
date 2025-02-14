@@ -1,11 +1,10 @@
-// postdetail.jsx
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
 
 export default function PostDetail() { 
-  const [post, setPost] = useState(null);
+  const [post, setPost] = useState();
 
   const { id } = useParams();
 
